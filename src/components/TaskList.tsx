@@ -14,31 +14,31 @@ interface Props {
 
 const TaskList = ({ todos, toggleDone, onCleanUp }: Props) => {
   return (
-    <>
-      <ul className="list form-check mb-3">
-        {todos.map((todo) => (
-          <li className="list-item" key={todo.id}>
-            <input
-              onChange={() => toggleDone(todo.id)}
-              id={todo.description}
-              type="checkbox"
-              checked={todo.isDone}
-            />
-            <label
-              className={todo.isDone ? "strikethrough" : ""}
-              htmlFor={todo.description}
-            >
-              {todo.description}
-            </label>
-          </li>
-        ))}
-      </ul>
-      {todos.length > 0 && (
+    todos.length > 0 && (
+      <>
+        <ul className="list form-check mb-3">
+          {todos.map((todo) => (
+            <li className="list-item" key={todo.id}>
+              <input
+                onChange={() => toggleDone(todo.id)}
+                id={todo.description}
+                type="checkbox"
+                checked={todo.isDone}
+              />
+              <label
+                className={todo.isDone ? "strikethrough" : ""}
+                htmlFor={todo.description}
+              >
+                {todo.description}
+              </label>
+            </li>
+          ))}
+        </ul>
         <button onClick={onCleanUp} className="btn btn-outline-danger">
           Clean Up!
         </button>
-      )}
-    </>
+      </>
+    )
   );
 };
 
