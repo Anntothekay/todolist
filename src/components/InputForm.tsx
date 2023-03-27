@@ -16,7 +16,7 @@ const InputForm = ({ onSave }: Props) => {
   return (
     <form onSubmit={handleSubmit} className="mb-5">
       <label htmlFor="description" className="form-label">
-        Add New Todo
+        Add New Todo:
       </label>
       <input
         value={newTodo}
