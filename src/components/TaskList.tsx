@@ -8,6 +8,7 @@ interface Todo {
 
 interface Props {
   todos: Todo[];
+  toggleDone: (isDone: boolean) => void;
 }
 
 const TaskList = ({ todos }: Props) => {
